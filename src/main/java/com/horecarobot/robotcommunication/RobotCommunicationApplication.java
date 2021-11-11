@@ -1,4 +1,4 @@
-package com.horecarobot.communication.robotcommunication;
+package com.horecarobot.robotcommunication;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
