@@ -2,7 +2,7 @@ import Socket from "./Socket.js";
 
 document.addEventListener('DOMContentLoaded', async () =>
 {
-    const socket = new Socket(`ws://localhost:8080/robot`);
+    const socket = new Socket(`ws://localhost:8082/customer`);
 
     socket.registerOnOpenCallback((event) => console.log(event));
     socket.registerOnCloseCallback((event) => console.log(event));
@@ -13,4 +13,5 @@ document.addEventListener('DOMContentLoaded', async () =>
     {
         socket.send('banaan :D')
     }
+    
 });
