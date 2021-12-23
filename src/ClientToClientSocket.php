@@ -75,6 +75,7 @@ class ClientToClientSocket implements MessageComponentInterface
     public function onClose(ConnectionInterface $conn) : void
     {
         $this->clients->detach($conn);
+        $this->clientMessageIDRegistry->unregisterClientByClient($conn);
 
         echo "Connection {$conn->resourceId} has disconnected\n";
     }
@@ -82,6 +83,7 @@ class ClientToClientSocket implements MessageComponentInterface
     public function onError(ConnectionInterface $conn, Exception $e) : void
     {
         $conn->close();
+        $this->clientMessageIDRegistry->unregisterClientByClient($conn);
 
         echo "An error has occurred: {$e->getMessage()}\n";
     }
